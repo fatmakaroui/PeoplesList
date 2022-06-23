@@ -1,1 +1,30 @@
-<p>person-details works!</p>
+<div class="header">
+  <h3 class="header__line">{{people?.name}}</h3>
+</div>
+<mat-card>
+  <ul class="nav in-nav">
+    <li><span>Username :</span>  {{people?.username}}</li>
+    <li><span>Phone :</span>  {{people?.phone}}</li>
+    <li><span>Website :</span>  {{people?.website}}</li>
+    <li class="item" >
+      <span>Address :</span>
+      <ul>
+        <li> <span>City :</span> {{people?.address?.city}}</li>
+        <li><span>Street :</span>  {{people?.address?.street}}</li>
+        <li> <span>Suite : </span>{{people?.address?.suite}}</li>
+        <li> <span>Zipcode :</span> {{people?.address?.zipcode}}</li>
+      </ul>
+</li>
+
+<li class="item" >
+  <span> Company :</span>
+  <ul>
+    <li><span>Name :</span>  {{people?.company?.name}}</li>
+    <li><span>Bs :</span>  {{people?.company?.bs}}</li>
+    <li> <span>CatchPhrase :</span> {{people?.company?.catchPhrase}}</li>
+  </ul>
+</li>
+
+
+  </ul>
+</mat-card>

@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { PersonDetailsComponent } from './components/person-details/person-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -27,6 +28,7 @@ import { FilterPipe } from './components/home/filter.pipe';
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,15 +17,16 @@ export class PersonDetailsComponent implements OnInit {
     activatedRouter.params.subscribe((params) => {
       this.currentId = params.id;
     });
-    console.log(this.currentId);
+    this.getPersonById();
   }
 
   ngOnInit(): void {}
 
   getPersonById() {
-    this.PersonService.getPeopleList().subscribe(
+    this.PersonService.getPeopleByID(this.currentId).subscribe(
       (res) => {
         this.people = res;
+        console.log(this.people);
       },
       (err) => {
         console.log(err);

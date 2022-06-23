@@ -7,7 +7,6 @@ import { Person } from 'src/app/shared/models/person';
 })
 export class FilterPipe implements PipeTransform {
   transform(value: Person[], filterString: string): Person[] {
-    console.log('pipe run');
     if (value.length === 0 || !filterString) {
       return value;
     }
