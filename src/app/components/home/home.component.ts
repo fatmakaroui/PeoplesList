@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PersonService } from 'src/app/shared/services/person.service';
 import { Person } from 'src/app/shared/models/person';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,17 +12,21 @@ export class HomeComponent implements OnInit {
   peoples: Array<Person> | any;
   placeholder = 'Search';
   searchText!: string;
+  loading = false;
   constructor(private PersonService: PersonService, private route: Router) {}
   ngOnInit() {
     this.getPeoplesList();
   }
   getPeoplesList() {
+    this.loading = true;
     this.PersonService.getPeopleList().subscribe(
       (res) => {
         this.peoples = res;
+        this.loading = false;
       },
       (err) => {
         console.log(err);
+        this.loading = false;
       }
     );
   }

@@ -2,6 +2,7 @@
   <h3 class="header__line">{{people?.name}}</h3>
 </div>
 <mat-card>
+  <mat-spinner color="primary" class="spinner" [diameter]="36" *ngIf="loading"></mat-spinner>
   <ul class="nav in-nav">
     <li><span>Username :</span>  {{people?.username}}</li>
     <li><span>Phone :</span>  {{people?.phone}}</li>

@@ -11,7 +11,8 @@ import { PersonDetailsComponent } from './components/person-details/person-detai
 import { HomeComponent } from './components/home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
-import { FilterPipe } from './components/home/filter.pipe';
+import { FilterPipe } from './shared/pipe/filter.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { FilterPipe } from './components/home/filter.pipe';
     Ng2SearchPipeModule,
     FormsModule,
     MatCardModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import { PersonService } from 'src/app/shared/services/person.service';
 export class PersonDetailsComponent implements OnInit {
   currentId: any;
   people: Person | any;
+  loading = false;
   constructor(
     private activatedRouter: ActivatedRoute,
     private PersonService: PersonService
@@ -23,13 +24,15 @@ export class PersonDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   getPersonById() {
+    this.loading = true;
     this.PersonService.getPeopleByID(this.currentId).subscribe(
       (res) => {
         this.people = res;
-        console.log(this.people);
+        this.loading = false;
       },
       (err) => {
         console.log(err);
+        this.loading = false;
       }
     );
   }

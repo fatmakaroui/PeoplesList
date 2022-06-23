@@ -35,3 +35,7 @@
 .form-control::placeholder  {
   font-family: FontAwesome;
 }
+.spinner{
+  margin: auto;
+    margin-top: 50px;
+}

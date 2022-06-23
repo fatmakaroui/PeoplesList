@@ -2,10 +2,12 @@
 <div class="header">
   <h3 class="header__line">{{title}}</h3>
 </div>
+
 <div class="search">
   <input class="form-control" type="text" name="search" autocomplete="off" placeholder="placeholder" [(ngModel)]="searchText" >
 </div>
   <mat-divider></mat-divider>
+  <mat-spinner color="primary" class="spinner" [diameter]="36" *ngIf="loading"></mat-spinner>
   <mat-nav-list >
     <a class="item" mat-list-item
     routerLink="/details/{{item.id}}"
