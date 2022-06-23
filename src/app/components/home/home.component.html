@@ -1,0 +1,17 @@
+<div class="container">
+<div class="header">
+  <h3 class="header__line">{{title}}</h3>
+</div>
+<div class="search">
+  <input class="form-control" type="text" name="search" autocomplete="off" placeholder="placeholder" [(ngModel)]="searchText" >
+</div>
+  <mat-divider></mat-divider>
+  <mat-nav-list >
+    <a class="item" mat-list-item
+    routerLink="/details/{{item.id}}"
+
+       *ngFor="let item of peoples | filter: searchText"> {{ item.name }} </a>
+  </mat-nav-list>
+  <mat-divider></mat-divider>
+
+</div>
